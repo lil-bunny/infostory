@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true, // Speeds up build by skipping type checking of declaration files
+    "strict": false, // Disables strict type-checking options
+    "noEmit": true, // Ensures no files are emitted during the build
+    "esModuleInterop": true, // Enables compatibility with CommonJS and ES Modules
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true, // Allows importing JSON files as modules
+    "isolatedModules": true, // Ensures compatibility with transpile-only scenarios
+    "jsx": "preserve", // Keeps JSX syntax in the output for further transformation
+    "incremental": true, // Speeds up subsequent builds by creating an incremental build state
+    "plugins": [
+      {
+        "name": "next" // Supports Next.js-specific IntelliSense
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"] // Sets up aliasing for cleaner imports
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "build/web/types/**/*.ts" // Corrected typo from "buid"
+  ],
+  "exclude": ["node_modules"]
+}
